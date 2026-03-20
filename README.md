@@ -4,17 +4,26 @@ A premium, feature-rich media player built with React, TypeScript, Vite, and Ele
 
 ## ✨ Features
 
-- **Advanced Playback**: Supports a wide range of audio and video formats.
-- **Custom Context Menu**: Right-click anywhere for quick access to controls, shuffle, repeat, and more.
-- **YouTube-style Previews**: Hover over the progress bar to see video thumbnails and timestamps.
-- **Adaptive Aura**: The interface background subtly adapts to the dominant color of the current media's album art.
-- **10-Band Equalizer**: Fine-tune your audio with 10 frequency bands and several built-in presets (Bass Boost, Rock, Pop, etc.).
-- **Smart Library**: Automatically scans folders, supports custom playlists, and offers advanced sorting (Name, Type, Size, Date Added, Duration).
-- **Subtitles Support**: Supports `.srt` and `.vtt` subtitles with automatic conversion.
-- **Crossfade & Multi-Player**: Smooth transitions between audio tracks using a dual-player system.
-- **Mini Player Mode**: A compact view for background listening.
-- **Customizable Themes**: Choose from several accent colors (Blue, Purple, Emerald, Amber, Rose).
-- **Persistent Settings**: Your preferences (theme, auto-hide controls, previews, EQ gains) are saved locally.
+- **Advanced Playback**: Supports a wide range of audio and video formats using a custom `media://` protocol for high performance.
+- **Custom Context Menu**: Professional right-click menu for quick access to playback controls, shuffle, repeat modes, and utility actions like "Copy Media Name".
+- **Intelligent Previews**:
+  - **Video**: YouTube-style thumbnail previews with timestamps on hover.
+  - **Audio**: Minimal, elegant time-bubble preview on hover.
+- **Smart Volume Control**:
+  - **Click to Mute**: Instant mute/unmute by clicking the speaker icon.
+  - **Scroll to Adjust**: Hover over the volume bar and scroll your mouse wheel for fine-grained control.
+- **Adaptive Aura**: The interface background dynamically adapts to the dominant color of the current media's album art using high-performance color extraction.
+- **10-Band Equalizer**: Fine-tune your audio experience with 10 frequency bands and professional presets (Bass Boost, Rock, Pop, Electronic, etc.).
+- **Professional Library Management**:
+  - **Smart Scanning**: Automatically indexes folders and detects media types.
+  - **Granular Control**: Remove individual files or entire folder trees from your view.
+  - **Advanced Sorting**: Sort by Name, Type, Size, Date Added, or Playable Duration.
+  - **Custom Playlists**: Create and manage your own collections.
+- **Subtitles & Audio Tracks**: Supports `.srt` and `.vtt` subtitles with auto-conversion and allows switching between multiple audio tracks in video files.
+- **Crossfade & Dual-Player**: Smooth transitions between tracks using a dual-audio-engine system.
+- **Mini Player Mode**: Compact, always-on-top view for background listening and viewing.
+- **Customizable Themes**: Choose from several premium accent colors (Blue, Purple, Emerald, Amber, Rose).
+- **Persistent Settings**: Your preferences (theme, auto-hide controls, previews, EQ gains) are saved locally and persist across sessions.
 
 ## 🚀 Getting Started
 
@@ -28,7 +37,7 @@ A premium, feature-rich media player built with React, TypeScript, Vite, and Ele
 1. Clone the repository:
    ```bash
    git clone https://github.com/Indrajit-suzzi/auraplayer.git
-   cd aura-player
+   cd auraplayer
    ```
 
 2. Install dependencies:
@@ -45,21 +54,21 @@ npm run electron
 
 ### Building for Production
 
-To build the project for production (Windows):
+To build and package the project for production (Windows):
 ```bash
 npm run dist
 ```
-The built installer will be located in the `release` folder.
+The installer will be generated in the `release` folder.
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 19, TypeScript, Vite
 - **Desktop Wrapper**: Electron
 - **Icons**: Lucide React
-- **Styling**: Vanilla CSS (Custom properties for theming)
-- **Audio Processing**: Web Audio API
+- **Styling**: Vanilla CSS (Modern CSS Properties & Glassmorphism)
+- **Audio Processing**: Web Audio API (Equalizer, Crossfade)
 - **Metadata**: jsmediatags
-- **Color Extraction**: colorthief
+- **Color Extraction**: ColorThief
 
 ## 📄 License
 
