@@ -27,7 +27,7 @@ A premium, feature-rich media player built with React, TypeScript, Vite, and Ele
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/aura-player.git
+   git clone https://github.com/Indrajit-suzzi/auraplayer.git
    cd aura-player
    ```
 
