@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.1.0",
   "type": "module",
-  "main": "main.js",
+  "main": "main.cjs",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -21,8 +21,8 @@
     "files": [
       "dist/**/*",
       "public/**/*",
-      "main.js",
-      "preload.js"
+      "main.cjs",
+      "preload.cjs"
     ],
     "win": {
       "target": [
