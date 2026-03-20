@@ -38,6 +38,13 @@
       "shortcutName": "AuraPlayer"
     },
     "asar": true,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Indrajit-suzzi",
+        "repo": "auraplayer"
+      }
+    ],
     "fileAssociations": [
       {
         "ext": "mp4",
