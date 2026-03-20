@@ -159,6 +159,28 @@ const App: React.FC = () => {
   const [alwaysOnTop, setAlwaysOnTop] = React.useState(() => localStorage.getItem('suite-ontop') === 'true');
   const [isMuted, setIsMuted] = React.useState(false);
   const [prevVolume, setPrevVolume] = React.useState(0.8);
+  const [updateStatus, setUpdateStatus] = React.useState<{ status: 'idle' | 'checking' | 'latest' | 'available', version?: string } | null>(null);
+
+  const APP_VERSION = '1.1.0';
+
+  const checkForUpdates = async () => {
+    setUpdateStatus({ status: 'checking' });
+    try {
+      const response = await fetch('https://api.github.com/repos/Indrajit-suzzi/auraplayer/releases/latest');
+      if (!response.ok) throw new Error('Failed to fetch');
+      const data = await response.json();
+      const latestVersion = data.tag_name.replace('v', '');
+      
+      if (latestVersion === APP_VERSION) {
+        setUpdateStatus({ status: 'latest' });
+      } else {
+        setUpdateStatus({ status: 'available', version: data.tag_name });
+      }
+    } catch {
+      setUpdateStatus(null);
+      setNotification("Could not check for updates");
+    }
+  };
 
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const audioRef = React.useRef<HTMLAudioElement>(null);
@@ -1230,6 +1252,33 @@ const App: React.FC = () => {
               <div className="settings-section">
                 <span className="settings-label">MAINTENANCE</span>
                 <button className="btn-modern secondary" style={{width:'100%', color:'#ff4b4b', border:'1px solid rgba(255,75,75,0.2)', fontSize:'12px'}} onClick={() => { clearLibrary(); setIsSettingsOpen(false); }}>Clear All Files & Library</button>
+              </div>
+
+              <div className="settings-section" style={{borderTop:'1px solid rgba(255,255,255,0.05)', paddingTop:'24px'}}>
+                <span className="settings-label">APP INFORMATION</span>
+                <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'15px'}}>
+                  <span style={{fontSize:'13px', opacity:0.6}}>Version {APP_VERSION}</span>
+                  {updateStatus?.status === 'available' ? (
+                    <a 
+                      href="https://github.com/Indrajit-suzzi/auraplayer/releases/latest" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="update-badge available"
+                    >
+                      Update Available: {updateStatus.version}
+                    </a>
+                  ) : updateStatus?.status === 'latest' ? (
+                    <span className="update-badge latest">Up to date</span>
+                  ) : null}
+                </div>
+                <button 
+                  className="btn-modern secondary" 
+                  style={{width:'100%', fontSize:'12px'}} 
+                  disabled={updateStatus?.status === 'checking'}
+                  onClick={checkForUpdates}
+                >
+                  {updateStatus?.status === 'checking' ? 'Checking for updates...' : 'Check for Updates'}
+                </button>
               </div>
             </div>
           </div>
