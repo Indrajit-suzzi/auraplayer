@@ -1,0 +1,23 @@
+:root {
+  --bg-dark: #0f0f12;
+  --surface-blur: rgba(255, 255, 255, 0.05);
+  --accent-color: #0084ff;
+  --accent-secondary: #8a2be2;
+  --text-primary: #ffffff;
+  --text-secondary: #9a9a9a;
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+}

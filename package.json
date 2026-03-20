@@ -1,0 +1,172 @@
+{
+  "name": "aura-player",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron": "npm run build && electron .",
+    "dist": "npm run build && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.aura.player",
+    "productName": "AuraPlayer",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "public/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AuraPlayer"
+    },
+    "asar": true,
+    "fileAssociations": [
+      {
+        "ext": "mp4",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "mkv",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "webm",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "mov",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "avi",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "flv",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "wmv",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "ogv",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "mp3",
+        "name": "Audio File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "wav",
+        "name": "Audio File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "m4a",
+        "name": "Audio File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "flac",
+        "name": "Audio File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "aac",
+        "name": "Audio File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "ogg",
+        "name": "Audio File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "m4v",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "3gp",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "3g2",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "ts",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "mpeg",
+        "name": "Video File",
+        "role": "Viewer"
+      },
+      {
+        "ext": "opus",
+        "name": "Audio File",
+        "role": "Viewer"
+      }
+    ]
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "colorthief": "^3.3.1",
+    "jsmediatags": "^3.9.7",
+    "lucide-react": "^0.577.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-virtuoso": "^4.18.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/jsmediatags": "^3.9.6",
+    "@types/node": "^24.12.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.0",
+    "electron": "^41.0.3",
+    "electron-builder": "^26.8.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^8.0.0"
+  }
+}
