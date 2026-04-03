@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "electron": "electron .",
-    "dist": "npm run build && electron-builder --win"
+    "dist": "npm run build && electron-builder --win -p always"
   },
   "build": {
     "appId": "com.aura.player",
