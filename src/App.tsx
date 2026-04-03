@@ -47,8 +47,9 @@ const App: React.FC = () => {
     volume, setVolume, playbackSpeed, setPlaybackSpeed, isShuffle, setIsShuffle,
     repeatMode, setRepeatMode, isMuted, setIsMuted, audioTracks,
     eqGains, setEqGains, currentPreset, setCurrentPreset,
-    crossfadeEnabled, setCrossfadeEnabled, activePlayer,
-    isCrossfading, crossfadeDuration, setCrossfadeDuration,
+    crossfadeEnabled,
+    activePlayer,
+    isCrossfading, crossfadeDuration,
     videoRef, audioRef, audioRef2,
     playMedia, handleCrossfade, handleNext, handlePrev, togglePlay, toggleMute, handleSkip,
     detectAudioTracks, switchAudioTrack, handleVolumeWheel, handleVolumeChange
@@ -420,8 +421,8 @@ const App: React.FC = () => {
             adaptiveAuraEnabled={adaptiveAuraEnabled} setAdaptiveAuraEnabled={setAdaptiveAuraEnabled} autoHideEnabled={autoHideEnabled} setAutoHideEnabled={setAutoHideEnabled}
             previewsEnabled={previewsEnabled} setPreviewsEnabled={setPreviewsEnabled} alwaysOnTop={alwaysOnTop} setAlwaysOnTop={setAlwaysOnTop}
             brightness={brightness} updateBrightness={updateBrightness}
-            skipInterval={skipInterval} setSkipInterval={setSkipInterval} crossfadeEnabled={crossfadeEnabled} setCrossfadeEnabled={setCrossfadeEnabled}
-            crossfadeDuration={crossfadeDuration} setCrossfadeDuration={setCrossfadeDuration} currentPreset={currentPreset} setCurrentPreset={setCurrentPreset}
+            skipInterval={skipInterval} setSkipInterval={setSkipInterval} crossfadeEnabled={crossfadeEnabled}
+            crossfadeDuration={crossfadeDuration} currentPreset={currentPreset} setCurrentPreset={setCurrentPreset}
             eqGains={eqGains} setEqGains={setEqGains} clearLibrary={clearLibrary} updateStatus={updateStatus} checkForUpdates={checkForUpdates} showNotify={showNotify}
           />
           {!mediaUrl && playlist.length === 0 && (<div className="welcome-screen-luxe"><div className="welcome-card-luxe glass"><div className="suite-logo">✦</div><h1>Aura Player</h1><div className="dash-actions-vertical"><button onClick={handleAddFolder} className="btn-modern primary">Select a Folder</button><label htmlFor="file-up" className="btn-modern secondary">Drag & Drop Files Here</label></div></div></div>)}

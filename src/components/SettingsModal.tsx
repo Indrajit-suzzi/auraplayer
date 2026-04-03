@@ -20,9 +20,7 @@ interface SettingsModalProps {
   skipInterval: number;
   setSkipInterval: (v: number) => void;
   crossfadeEnabled: boolean;
-  setCrossfadeEnabled: (v: boolean) => void;
   crossfadeDuration: number;
-  setCrossfadeDuration: (v: number) => void;
   currentPreset: string;
   setCurrentPreset: (v: string) => void;
   eqGains: number[];
@@ -37,7 +35,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
   isOpen, onClose, theme, updateTheme, adaptiveAuraEnabled, setAdaptiveAuraEnabled,
   autoHideEnabled, setAutoHideEnabled, previewsEnabled, setPreviewsEnabled,
   alwaysOnTop, setAlwaysOnTop, brightness, updateBrightness, skipInterval, setSkipInterval,
-  crossfadeEnabled, setCrossfadeEnabled, crossfadeDuration, setCrossfadeDuration,
+  crossfadeEnabled, crossfadeDuration,
   currentPreset, setCurrentPreset, eqGains, setEqGains,
   clearLibrary, updateStatus, checkForUpdates, showNotify
 }) => {
