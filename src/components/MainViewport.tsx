@@ -32,6 +32,7 @@ interface MainViewportProps {
   detectAudioTracks: () => void;
   handleTimeUpdate: (el: HTMLMediaElement | null) => void;
   brightness: number;
+  showNotify: (msg: string) => void;
 }
 
 const MainViewport: React.FC<MainViewportProps> = React.memo(({
@@ -40,7 +41,7 @@ const MainViewport: React.FC<MainViewportProps> = React.memo(({
   crossfadeEnabled, isCrossfading, crossfadeDuration,
   videoRef, audioRef, audioRef2,
   togglePlay, toggleFullscreen, setDuration, setIsPlaying,
-  handleNext, detectAudioTracks, brightness, handleTimeUpdate
+  handleNext, detectAudioTracks, brightness, handleTimeUpdate, showNotify
 }) => {
   const currentItem = playlist[currentIndex];
 
@@ -60,7 +61,7 @@ const MainViewport: React.FC<MainViewportProps> = React.memo(({
               onError={(e) => {
                 const error = (e.target as any).error;
                 console.error("Video Error:", error);
-                alert(`Playback Error: ${error?.message || "Unknown Code " + error?.code} for URL: ${mediaUrl}`);
+                showNotify(`Playback Error: ${error?.message || "Unknown Code " + error?.code}`);
               }}
               onPlay={() => setIsPlaying(true)} 
             >
@@ -118,7 +119,7 @@ const MainViewport: React.FC<MainViewportProps> = React.memo(({
               onError={(e) => {
                 const error = (e.target as any).error;
                 console.error("Audio A Error:", error);
-                alert(`Playback Error: ${error?.message || "Unknown Code " + error?.code} for URL: ${mediaUrl}`);
+                showNotify(`Playback Error: ${error?.message || "Unknown Code " + error?.code}`);
               }}
             />
           )}

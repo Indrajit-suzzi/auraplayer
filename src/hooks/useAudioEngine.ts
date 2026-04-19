@@ -97,9 +97,6 @@ export const useAudioEngine = (
     setCurrentIndex(index);
     setIsPlaying(true);
     setIsCrossfading(false);
-    setCurrentIndex(index);
-    setIsPlaying(true);
-    setIsCrossfading(false);
     initAudioContext();
   }, [playlist, initAudioContext]);
 

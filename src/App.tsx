@@ -443,6 +443,7 @@ const App: React.FC = () => {
             handleNext={handleNext} detectAudioTracks={detectAudioTracks}
             brightness={brightness}
             handleTimeUpdate={handleTimeUpdate}
+            showNotify={showNotify}
           />
           <PlayerControls 
             mediaUrl={mediaUrl} mediaType={mediaType} isPlaying={isPlaying} isShuffle={isShuffle} repeatMode={repeatMode} currentTime={currentTime} duration={duration}

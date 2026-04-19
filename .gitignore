@@ -1,25 +1,82 @@
-# Environment and OS
-.DS_Store
-*.local
-.env*
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+```
+# Dependencies
+node_modules/
 
-# Project specific
-node_modules
-dist
-release
-dist-ssr
-*.txt
-library.json
+# Build artifacts
+dist/
+build/
+target/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.ENV
+.env
+.env.local
+.env.*
+.venv/
+venv/
+ENV/
+.env.dSYM/
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
 
 # IDE
-.vscode/*
-!.vscode/extensions.json
-.idea
-.fleet
-.hx
-.vscode
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.mypy_cache/
+.pytest_cache/
+.nyc_output/
+coverage/
+
+# Environment specific
+.env
+.env.local
+.env.*
+!.env.example
+
+# Compressed
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```
